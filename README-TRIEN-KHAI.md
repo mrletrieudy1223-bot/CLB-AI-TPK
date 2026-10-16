@@ -29,7 +29,8 @@ Các trang học độc lập bao gồm AI cơ bản, AI tạo sinh, prompt, h�
 - `providers.html`: provider, tài liệu chính thức và nút tìm video theo chủ đề
 - `site.css`, `common.js`: giao diện/chức năng dùng chung
 - `site-config.js`: link Google Form, lịch, liên hệ và trạng thái tuyển
-- `assets/`: logo trường và hình minh họa; giữ nguyên cấu trúc khi tải lên
+- Logo trường được nhúng trực tiếp vào các trang HTML để không phụ thuộc file logo rời.
+- `assets/`: hình minh họa; giữ nguyên cấu trúc khi tải lên
 
 ## Trước khi công bố
 Mở `site-config.js` và cập nhật `googleFormUrl`, `officialContact`, `clubSchedule`, `recruitmentStatus` bằng thông tin đã được CLB/nhà trường xác nhận. Chỉ thu thập dữ liệu cần thiết; xin phép nhà trường và thông báo rõ mục đích sử dụng. Thử Google Form trước khi chia sẻ rộng rãi.
