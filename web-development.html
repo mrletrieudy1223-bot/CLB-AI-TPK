@@ -1,0 +1,43 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Tạo cấu trúc, giao diện responsive và tương tác bằng JavaScript."><title>Làm web với HTML, CSS, JavaScript | Câu Lạc Bộ AI TPK</title><link rel="stylesheet" href="site.css"></head><body><header class="wrap nav"><a class="brand" href="index.html"><img class="school-logo" src="assets/logo-truong.png" alt="Logo Trường THPT Tân Phước Khánh"><span>CÂU LẠC BỘ AI<small>THPT TÂN PHƯỚC KHÁNH</small></span></a><nav class="links"><a href="index.html">Trang chủ</a><a href="about.html">Về CLB</a><a href="activities.html">Hoạt động</a><a href="guide.html">Bách khoa AI</a><a href="coding.html">Học viết code</a><a href="models.html">Models & Provider</a><a href="news.html">Thông báo</a><a href="join.html">Tham gia</a></nav><a class="btn" href="join.html">Tham gia CLB ↗</a></header><main><section class="banner"><div class="wrap"><div class="kicker">Coding Lab · Web development</div><h1 class="page-title">Làm web với HTML, CSS, JavaScript</h1><p class="lead">Tạo cấu trúc, giao diện responsive và tương tác bằng JavaScript.</p><div class="actions"><a class="btn secondary" href="coding.html">← Quay lại mục lục</a><a class="btn secondary" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=HTML+CSS+JavaScript+beginner+project">Tìm video học chủ đề này trên YouTube ↗</a></div></div></section><div class="wrap visual-break"><img class="page-illustration" src="assets/code-workshop.jpg" alt="Minh họa hoạt động lập trình của học sinh" loading="lazy"></div><section class="section"><div class="wrap standalone-lesson"><article class="card lesson" id="html"><p><a class="btn" href="code-playground.html">Mở Code Playground tương tác ↗</a></p><div class="kicker">02 · Cấu trúc nội dung</div><h2>HTML: tạo khung trang</h2><p>HTML mô tả cấu trúc và ý nghĩa nội dung. Thẻ thường có thẻ mở, nội dung và thẻ đóng. Dùng các phần tử có ngữ nghĩa như <code>header</code>, <code>main</code>, <code>section</code>, <code>h1</code>, <code>p</code>, <code>a</code>, <code>button</code>.</p><div class="codebox"><div class="codehead">index.html <span>HTML</span></div><pre><code>&lt;!doctype html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;CLB AI TPK&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;&lt;strong&gt;Câu Lạc Bộ AI TPK&lt;/strong&gt;&lt;/header&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Chào mừng đến với CLB AI&lt;/h1&gt;
+    &lt;p&gt;Cùng học, thử nghiệm và sáng tạo có trách nhiệm.&lt;/p&gt;
+    &lt;button id="helloButton"&gt;Bấm thử&lt;/button&gt;
+    &lt;p id="message" aria-live="polite"&gt;&lt;/p&gt;
+  &lt;/main&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div><p><b>Thử nghiệm:</b> đổi nội dung tiêu đề, lưu file và tải lại trang. Mỗi trang nên có một tiêu đề <code>h1</code> chính, nội dung có thứ bậc hợp lý.</p></article>
+<article class="card lesson" id="css"><div class="kicker">03 · Hình thức</div><h2>CSS: làm giao diện dễ đọc</h2><p>CSS điều khiển màu sắc, khoảng cách, chữ và bố cục. Chọn màu có độ tương phản đủ, cỡ chữ dễ đọc và kiểm tra giao diện trên điện thoại.</p><div class="codebox"><div class="codehead">style.css <span>CSS</span></div><pre><code>* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b1020;
+  color: #f4f7ff;
+}
+header { padding: 20px; border-bottom: 1px solid #334; }
+main { width: min(700px, 90%); margin: 60px auto; }
+h1 { font-size: clamp(2rem, 6vw, 4rem); }
+p { line-height: 1.7; color: #b8c3d8; }
+button {
+  padding: 12px 18px; border: 0; border-radius: 10px;
+  background: #53e2ff; color: #07111d; font-weight: 700;
+  cursor: pointer;
+}
+button:focus-visible { outline: 3px solid white; outline-offset: 3px; }</code></pre></div><p>Thử thay <code>background</code>, <code>color</code>, <code>padding</code>. Dùng CSS responsive như <code>clamp()</code> hoặc media query để bố cục co giãn.</p></article>
+<article class="card lesson" id="js"><div class="kicker">04 · Hành vi</div><h2>JavaScript: làm trang tương tác</h2><p>JavaScript cho phép xử lý sự kiện và cập nhật nội dung trang. Bắt đầu với các thao tác đơn giản, kiểm tra dữ liệu đầu vào và không đặt bí mật vào mã chạy ở trình duyệt.</p><div class="codebox"><div class="codehead">script.js <span>JavaScript</span></div><pre><code>const button = document.querySelector('#helloButton');
+const message = document.querySelector('#message');
+
+button.addEventListener('click', () =&gt; {
+  message.textContent = 'Chào bạn! Cùng khám phá AI nhé.';
+});</code></pre></div><p><b>Giải thích:</b> <code>querySelector</code> tìm phần tử theo selector; <code>addEventListener</code> lắng nghe sự kiện; khi bấm, <code>textContent</code> đổi nội dung chữ.</p></article>
+<article class="card lesson" id="project"><div class="kicker">05 · Bài tập mini</div><h2>Tự làm trang giới thiệu một hoạt động CLB</h2><ol><li>Thêm một <code>section</code> HTML với tên workshop, mô tả, ngày chỉ khi đã xác nhận.</li><li>Tạo một lớp CSS cho thẻ hoạt động, dùng khoảng cách và đường viền rõ ràng.</li><li>Thêm nút “Tìm hiểu thêm” dẫn tới trang nội bộ tương ứng.</li><li>Thử thu hẹp cửa sổ trình duyệt và xem có bị tràn ngang không.</li><li>Nhờ bạn khác dùng bàn phím và điện thoại kiểm thử.</li></ol><div class="prompt-demo">Tiêu chí hoàn tất: nội dung chính đọc được; liên kết đúng; không có ngày/sự kiện bịa; giao diện co giãn; không có lỗi trong Console.</div></article></div></section></main><footer class="wrap footer"><span>© <span data-year></span> Câu Lạc Bộ AI — Trường THPT Tân Phước Khánh</span><span>Tài liệu học tập · Thử nghiệm có trách nhiệm</span></footer><script src="common.js"></script></body></html>
